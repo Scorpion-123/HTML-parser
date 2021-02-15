@@ -5,15 +5,18 @@ from html.parser import HTMLParser
 
 class MyHTMLparser(HTMLParser):
     def handle_starttag(self, tag, attrs):
-        print("The start tags present in the HTML code are: ", tag)
+        print("The start tags present in the HTML code are :", tag)
         for i in attrs:
-            print("The attributes present in the HTML code are: ", i)
+            print("The attributes present in the HTML code are :", i)
 
     def handle_endtag(self, tag):
-        print("The endtags present in the HTML code are: ", tag)
+        print("The endtags present in the HTML code are :", tag)
 
     def handle_data(self, data):
-        print("The data present in the HTML code are: ", data)
+        print("The data present in the HTML code are :", data)
+       
+    def handle_comment(self, data):
+        print("The comment present in the HTML code are :", data)
 
 
 parser = MyHTMLparser()
